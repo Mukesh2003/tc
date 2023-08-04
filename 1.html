@@ -1,0 +1,189 @@
+<?php
+    require_once("connect.php"); 
+    // C:\xampp\phpMyAdmin\vendor
+    // require_once __DIR__ . '\vendor\autoload.php';
+    $id=$_POST["fname"];
+
+    $query=" SELECT * from samplestudent1 where RollNumber = '".$id."' ";
+    $queryfire = mysqli_query($conn, $query);
+    // $row=mysqli_fetch_assoc($result);
+    $num=mysqli_num_rows($queryfire); 
+    if($num){
+        $result=mysqli_query($conn,$query); 
+        $row=mysqli_fetch_assoc($result);
+    }
+    else{
+        // $err="Incorrect details";
+        header('Location: roll.html');  
+    }
+    $query2="SELECT TC FROM serial";
+    $queryfire2 = mysqli_query($conn, $query2);
+    $row2=mysqli_fetch_assoc($queryfire2);
+    if(isset($_POST['save'])){
+        $id=$_POST['admin_no'];
+        $course=$_POST['course'];
+        $sur_name=$_POST['sur_name'];
+        $name=$_POST['name'];
+        $father_name=$_POST['father_name'];
+        $father_sur_name=$_POST['father_sur_name'];
+        // $date=$_POST['date'];
+        $religion=$_POST['religion'];
+        $dob=$_POST['dob'];
+        $date_adm=$_POST['date_adm'];
+        $qualify=$_POST['qualify'];
+        $fee_pay=$_POST['fee_pay'];
+        $date_left=$_POST['date_left'];
+        $remarks=$_POST['remarks'];
+        $conduct=$_POST['conduct'];
+        $query="UPDATE samplestudent1 SET Course='$course',Student_Name='$name',Student_Sur_Name='$sur_name',Father_Name='$father_name',Father_Sur_Name='$father_sur_name',
+        Nationality='$religion',Date_of_Birth='$dob',Admission_date='$date_adm',
+        Promoted='$qualify',Fee_paid='$fee_pay',Date_college_left='$date_left',
+        Remarks='$remarks',Conduct='$conduct' where RollNumber='$id'";
+        $query_run=mysqli_query($conn,$query);
+    }
+    if(isset($_POST['print'])){
+        $val4=$row2['TC']+1;
+        $query4="UPDATE serial SET TC='$val4'";
+        $query_run4=mysqli_query($conn,$query4);
+    }
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* CSS for styling the page */
+      .container {
+        width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      h1 {
+        font-size: 23px;
+        margin-top: 50px;
+      }
+      .tc-section {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+        margin: 50px 0;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 5px #ccc;
+      }
+      .sc-section {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+        margin: 50px 0;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 5px #ccc;
+      }
+      .title {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      .logo {
+        width: 100px;
+        height: 100px;
+        margin: 20px auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>JAWAHARLAL  NEHRU TECHNOLOGICAL UNIVERSITY KAKINADA</h1>
+      <h2>UNIVERSITY COLLEGE OF ENGINEERING,VIZINAGARAM-535003(AP)</h2>
+      <img class="logo" src="college-logo.png" alt="College Logo">
+      <!-- Transfer certificate section -->
+      <div class="tc-section">
+        <div class="title">
+          Transfer Certificate
+        </div>
+        <table>
+          <tr>
+            <th>S.No</th>
+            <th>Details</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Name</td>
+            <td>John Doe</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Admin No</td>
+            <td>12345</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Enrollment No</td>
+            <td>67890</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Date of Birth</td>
+            <td>01-01-2000</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Date of Transfer</td>
+            <td>01-01-2023</td>
+          </tr>
+        </table>
+      </div>
+      <!-- Study certificate section -->
+      <div class="sc-section">
+        <div class="title">
+          Study Certificate
+                  </div>
+        <table>
+          <tr>
+            <th>S.No</th>
+            <th>Details</th>
+            <th>Value</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Name</td>
+            <td>John Doe</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Admin No</td>
+            <td>12345</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Enrollment No</td>
+            <td>67890</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Date of Birth</td>
+            <td>01-01-2000</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Duration of Study</td>
+            <td>5 years</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+    

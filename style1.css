@@ -1,0 +1,238 @@
+body {
+    font-family: Calibri, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+  }
+  .td{
+    /* text-align:left; */
+    line-height: 0.8;
+
+  }
+  .container {
+    margin: 30px;
+    margin-top: 0;
+    font-size: 18px;
+  }
+  #save {
+    display:none
+  }
+  .logo {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* .logo img {
+    height: 100px;
+    width: 100px;
+  } */
+  
+  .title {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 22px;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .bold {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .content {
+    margin-top: 0px;
+  }
+  
+  .border {
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+  
+  .summary {
+    /* font-size: 19.5px; */
+    font-weight: bold;
+    font-family: sans-serif;
+    white-space: nowrap;
+  }
+  .summary1 {
+    /* font-size: 19.5px; */
+    /* font-weight: bold; */
+    font-family: sans-serif;
+  }
+    .single-line-paragraph {
+      white-space: nowrap;
+      font-family: sans-serif;
+    }
+  
+  .conduct {
+    font-size: 17px;
+    font-family:Times New Roman;
+    /* font-weight: bold; */
+  }
+  .line {
+    line-height: 0; 
+  }
+  .conduct1 {
+    font-size: 19px;
+    font-family:Times New Roman;
+    /* font-weight: bold; */
+  }
+  
+  .footer {
+      font-size: 15px;
+      font-family:Times New Roman;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+    .footer1 {
+      font-size: 15px;
+      font-family:Times New Roman;
+      /* font-weight: bold; */
+      white-space: nowrap;
+    }
+  .buttons {
+    text-align: center;
+    /* margin-top: 20px; */
+  }
+  
+  .print-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .print-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* A4 Size */
+  @page {
+    size: Legal;
+    margin: 0;
+  }
+  
+  /* Content Container */
+  #main-container {
+    width: 21cm;
+    margin: 0 auto;
+    margin-top:0px;
+    padding: 0cm;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
+  }
+  
+  /* Additional Styling */
+  /* Adjust spacing and layout as needed */
+  /* Example: Set width and center align the text */
+  #main-container h2,
+  #main-container p,
+  #main-container table {
+    width: 100%;
+    text-align: center;
+  }
+  
+  #main-container table {
+    margin-top: 0px;
+  }
+  
+  #main-container td {
+    padding: 5px;
+  }
+  
+  #main-container .center {
+    text-align: center;
+  }
+  
+  #main-container .left-align {
+    text-align: left;
+  }
+  
+  #main-container .right-align {
+    text-align: right;
+  }
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    #main-container,
+    #main-container * {
+      visibility: visible;
+    }
+  }
+  .student-info, .course-info, .conduct-info {
+    display: flex;
+    /* justify-content: center; */
+    margin-bottom: 10px;
+    margin-left:90px; 
+    white-space: nowrap;
+  }
+
+    .student-info1
+    {
+      display: flex;
+      /* justify-content: center; */
+      margin-bottom: 10px;
+      margin-left:135px;
+      white-space: nowrap;
+    }
+      .student-info2 {
+        display: flex;
+        /* justify-content: right; */
+        margin-bottom: 10px;
+        margin-left:110px;
+        white-space: nowrap;
+      }
+.std{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.std1{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.student-info label,
+.course-info label,
+.conduct-info label {
+    margin-right: 10px;
+}
+
+.student-info input,
+.course-info input,
+.conduct-info input {
+    flex: 1;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 30px;
+    margin-left:400px;
+    margin-bottom:-10px;
+}
+
+/* .buttons {
+    text-align: center;
+    margin-top: 20px;
+} */
+
+/* #save, #print {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#print {
+    background-color: #28a745;
+} */

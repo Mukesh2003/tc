@@ -1,0 +1,43 @@
+/* A4 Size */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+/* Content Container */
+#main-container {
+  width: 21cm;
+  margin: 1.5cm auto;
+  padding: 1cm;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional Styling for Printing */
+/* Adjust spacing and layout as needed */
+/* Example: Set width and center align the text */
+#main-container h2,
+#main-container p,
+#main-container table {
+  width: 100%;
+  text-align: center;
+}
+
+#main-container table {
+  margin-top: 20px;
+}
+
+#main-container td {
+  padding: 5px;
+}
+
+#main-container .center {
+  text-align: center;
+}
+
+#main-container .left-align {
+  text-align: left;
+}
+
+#main-container .right-align {
+  text-align: right;
+}
